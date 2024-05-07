@@ -122,6 +122,19 @@
 				<version>2.19.1</version>
 			</plugin>
 		</plugins>
+		<distributionManagement>
+                     <repository>
+                       <id>maven-releases</id>
+                  <!-- CHANGE HERE by your team Nexus server -->
+                       <url>http://44.204.5.43:8081/repository/maven-releases/</url>
+                    </repository>
+                    <snapshotRepository>
+                       <id>maven-snapshots</id>
+                 <!-- CHANGE HERE by your team Nexus server -->
+                        <url>http://44.204.5.43:8081/repository/maven-snapshots/</url>
+                   </snapshotRepository>
+               </distributionManagement>
+		
 
     </build>
 </project>
