@@ -122,6 +122,9 @@
 				<version>2.19.1</version>
 			</plugin>
 		</plugins>
+		
+
+    </build>
 		<distributionManagement>
                      <repository>
                        <id>maven-releases</id>
@@ -134,7 +137,4 @@
                         <url>http://44.204.5.43:8081/repository/maven-snapshots/</url>
                    </snapshotRepository>
                </distributionManagement>
-		
-
-    </build>
 </project>
