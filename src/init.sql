@@ -1,7 +1,6 @@
 ```sql
     CREATE DATABASE bugtracker;
     USE bugtracker;
-
     CREATE TABLE status
 (
     status_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -45,22 +44,18 @@ INSERT INTO bugtracker.team_members VALUES (1, 'John', 'Thompson', 'j.thompson@s
 INSERT INTO bugtracker.team_members VALUES (2, 'Mary', 'Johnson', 'm.johnson@spring.com');
 INSERT INTO bugtracker.team_members VALUES (3, 'Judy', 'Gordon', 'j.gordon@spring.com');
 INSERT INTO bugtracker.team_members VALUES (4, 'Frank', 'Williams', 'f.williams@spring.com');
-
 INSERT INTO bugtracker.status VALUES (1,'To Do');
 INSERT INTO bugtracker.status VALUES (2,'In Progress');
 INSERT INTO bugtracker.status VALUES (3,'To Validate');
 INSERT INTO bugtracker.status VALUES (4,'Done');
-
 INSERT INTO bugtracker.type VALUES (1,'Task');
 INSERT INTO bugtracker.type VALUES (2,'Study');
 INSERT INTO bugtracker.type VALUES (3,'Support');
 INSERT INTO bugtracker.type VALUES (4,'Bug');
-
 INSERT INTO bugtracker.project VALUES (1,'Project Metro','Increase productivity',1, 1);
 INSERT INTO bugtracker.project VALUES (2,'Project Ivory','Reduce project time and cost',3, 2);
 INSERT INTO bugtracker.project VALUES (3,'Project Apollo','Improve communication between teams',4, 3);
 INSERT INTO bugtracker.project VALUES (4,'Project Kodiak','Identify innovative solutions and approaches',3, 4);
-
 INSERT INTO bugtracker.item VALUES (1, 'Implement Project Apollo', 'Implement the results of Project Apollo', 1, 1, 1);
 INSERT INTO bugtracker.item VALUES (2, 'Project Apollo: PIR', 'Conduct a PIR of Project Apollo', 2, 2, 2);
 INSERT INTO bugtracker.item VALUES (3, 'Define tasks for Project Metro', 'Define project plan and Roadmap', 4, 2, 3);
