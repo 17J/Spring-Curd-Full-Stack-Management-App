@@ -1,3 +1,3 @@
 FROM mysql:latest
-COPY init.sql /docker-entrypoint-initdb.d/
+ADD init.sql /docker-entrypoint-initdb.d/init.sql 644  
 CMD ["mysqld"]
