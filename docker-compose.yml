@@ -22,8 +22,6 @@ services:
      - MYSQL_ROOT_PASSWORD= root@123
      - MYSQL_HOST= mysqldb
      - MYSQL_DATABASE= bugtracker   
-    ports:
-     - 3306:3306
     networks:
      - mysql-most  # Connect the database to the custom network
 
