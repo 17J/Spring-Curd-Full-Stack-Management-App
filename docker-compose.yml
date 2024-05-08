@@ -15,7 +15,8 @@ services:
     networks:
       - mysql-most  # Connect the frontend to the custom network
     depends_on:
-      - 'mysqldb'
+       mysqldb:
+         condition: service_healthy
 
   db:
     build: ./src  # Build the database image from the directory named 'db'
