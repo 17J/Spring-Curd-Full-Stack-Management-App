@@ -1,0 +1,21 @@
+version: '3'
+
+networks:
+  mysql-most:  # Define the custom network
+
+services:
+  frontend:
+    build: .  # Build the frontend image from the current directory
+    ports:
+      - "8085:8085"  # Map container port 8085 to host port 8085
+    environment:
+      - MYSQL_HOST=mysqldb  # Use the service name of the database container
+      - MYSQL_PORT=3306  # Standard MySQL port
+      - $(cat .env)  # Read environment variables from .env file
+    networks:
+      - mysql-most  # Connect the frontend to the custom network
+
+  db:
+    build: ./db  # Build the database image from the directory named 'db'
+    networks:
+      - mysql-most  # Connect the database to the custom network
