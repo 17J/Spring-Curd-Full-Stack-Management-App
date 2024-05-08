@@ -17,5 +17,8 @@ services:
 
   db:
     build: ./src  # Build the database image from the directory named 'db'
+    environment:
+    - MYSQL_ROOT_PASSWORD=root@123
+    - MYSQL_DATABASE=bugtracker   
     networks:
       - mysql-most  # Connect the database to the custom network
