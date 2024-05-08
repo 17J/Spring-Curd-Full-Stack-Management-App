@@ -16,6 +16,6 @@ services:
       - mysql-most  # Connect the frontend to the custom network
 
   db:
-    build: ./db  # Build the database image from the directory named 'db'
+    build: ./src  # Build the database image from the directory named 'db'
     networks:
       - mysql-most  # Connect the database to the custom network
