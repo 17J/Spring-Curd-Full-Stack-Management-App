@@ -14,9 +14,7 @@ services:
       - $(cat .env)  # Read environment variables from .env file
     networks:
       - mysql-most  # Connect the frontend to the custom network
-    depends_on:
-       mysqldb:
-         condition: service_healthy
+    
 
   db:
     build: ./src  # Build the database image from the directory named 'db'
