@@ -9,7 +9,7 @@ services:
     ports:
       - "8085:8085"  # Map container port 8085 to host port 8085
     environment:
-      - MYSQL_HOST='mysqldb'  # Use the service name of the database container
+      - MYSQL_HOST=mysqldb  # Use the service name of the database container
       - MYSQL_PORT=3306  # Standard MySQL port
       - $(cat .env)  # Read environment variables from .env file
     networks:
@@ -20,9 +20,9 @@ services:
   db:
     build: ./src  # Build the database image from the directory named 'db'
     environment:
-     - MYSQL_ROOT_PASSWORD='root@123'
-     - MYSQL_HOST= 'mysqldb'
-     - MYSQL_DATABASE='bugtracker'   
+     - MYSQL_ROOT_PASSWORD= root@123
+     - MYSQL_HOST= mysqldb
+     - MYSQL_DATABASE= bugtracker   
     ports:
      - 3306:3306
     networks:
