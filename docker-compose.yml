@@ -26,5 +26,4 @@ services:
      - 3306:3306
     networks:
      - mysql-most  # Connect the database to the custom network
-  networks:
-   - mysql-most
+
