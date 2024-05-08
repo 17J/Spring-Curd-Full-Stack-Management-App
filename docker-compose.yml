@@ -19,7 +19,7 @@ services:
     build: ./src  # Build the database image from the directory named 'db'
     environment:
      - MYSQL_ROOT_PASSWORD=root@123
-     - MYSQL_HOST: mysqldb
+     - MYSQL_HOST= mysqldb
      - MYSQL_DATABASE=bugtracker   
     ports:
      - 3306:3306
