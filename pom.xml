@@ -19,6 +19,7 @@
 	<description>Project Tracker</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -45,6 +46,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+                </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -102,7 +107,7 @@
 					<schemas>
 						<schema>bugtracker</schema>
 					</schemas>
-					<url>jdbc:mysql://mysqldb?serverTimezone=UTC</url>
+					<url>jdbc:mysql://mysqlfd:3333?serverTimezone=UTC</url>
 					<user>root</user>
 					<password>root@123</password>
 				</configuration>
