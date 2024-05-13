@@ -11,7 +11,7 @@ services:
     environment:
       - DB_HOST=db  # Use the service name of the database container
       - DB_NAME=bugtracker # Standard MySQL port  # Add other environment variables from .env (see note)
-      - DB_PASSWORD=root@123
+      - DB_PASSWORD=${DB_PASSWORD}
     depends_on:
       - db  # Ensure database is ready before starting frontend
     
@@ -22,9 +22,9 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=root@123  # Consider using a stronger password
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}  # Consider using a stronger password
       - MYSQL_DATABASE=bugtracker
-      - MYSQL_PASSWORD=root@123
+      - MYSQL_PASSWORD=${DB_PASSWORD}
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
