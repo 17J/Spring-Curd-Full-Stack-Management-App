@@ -9,10 +9,9 @@ services:
     ports:
       - "8085:8085"  # Map container port 8085 to host port 8080 (standard HTTP)
     environment:
-      - DB_HOST: mysql  # Use the service name of the database container
-      - DB_NAME: bugtracker # Standard MySQL port
-      - DB_USER: root  # Add other environment variables from .env (see note)
-      - DB_PASSWORD: root@123
+      - DB_HOST=db  # Use the service name of the database container
+      - DB_NAME=bugtracker # Standard MySQL port  # Add other environment variables from .env (see note)
+      - DB_PASSWORD=root@123
     depends_on:
       - db  # Ensure database is ready before starting frontend
     
@@ -20,10 +19,18 @@ services:
   # Use a more descriptive service name
   db:
     image: mysql:8.0  # Build the database image from the directory named 'db'
+    ports:
+      - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD: root@123  # Consider using a stronger password
-      - MYSQL_DATABASE: bugtracker
-      - MYSQL_USER: root
-      - MYSQL_PASSWORD: root@123
+      - MYSQL_ROOT_PASSWORD=root@123  # Consider using a stronger password
+      - MYSQL_DATABASE=bugtracker
+      - MYSQL_PASSWORD=root@123
     volumes:
-      - .init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD","mysqladmin","ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+

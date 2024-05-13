@@ -107,7 +107,7 @@
 					<schemas>
 						<schema>bugtracker</schema>
 					</schemas>
-					<url>jdbc:mysql://mysqlfd:3333?serverTimezone=UTC</url>
+					<url>jdbc:mysql://db:3306?serverTimezone=UTC</url>
 					<user>root</user>
 					<password>root@123</password>
 				</configuration>

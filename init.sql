@@ -1,27 +1,26 @@
-CREATE DATABASE IF NOT EXISTS bugtracker;
 USE bugtracker;
-CREATE TABLE status
-(
+
+CREATE TABLE status (
     status_id INT AUTO_INCREMENT PRIMARY KEY,
     status_name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE team_members
-(
+
+CREATE TABLE team_members (
     member_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(60) NOT NULL,
     last_name VARCHAR(60) NOT NULL,
     email_address VARCHAR(250) NOT NULL
 );
 
-CREATE TABLE type
-(
+
+CREATE TABLE type (
     type_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE project
-(
+
+CREATE TABLE project (
     project_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(60) NOT NULL,
     description VARCHAR(250),
@@ -31,8 +30,8 @@ CREATE TABLE project
     FOREIGN KEY (member_id) REFERENCES team_members(member_id)
 );
 
-CREATE TABLE item
-(
+
+CREATE TABLE item (
     item_id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(60) NOT NULL,
     description VARCHAR(250),
