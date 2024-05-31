@@ -14,8 +14,8 @@ spec:
         app: fullstackapp
     spec:
       containers:
-        - name: bookstore
-          image: 17rj/bookstoreapp:latest # Image that will be used to containers in the cluster
+        - name: fullstackapp
+          image: 17rj/fullstackapp:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
           ports:
             - containerPort: 8085 # The port that the container is running on in the cluster
