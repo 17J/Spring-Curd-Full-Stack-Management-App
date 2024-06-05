@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql
+          image: mysql:latest
           ports:
             - containerPort: 3306
           env:
@@ -63,6 +63,7 @@ metadata:
 spec:
   selector:
     app: mysql
+    type: NodePort
   ports:
     - protocol: TCP
       port: 3306
