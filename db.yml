@@ -33,6 +33,7 @@ spec:
       containers:
         - name: mysql
           image: mysql:latest
+          command: ["sh", "-c", "curl -s https://raw.githubusercontent.com/17J/Spring-Curd-Full-Stack-Management-App/ci_cd_pipeline/init.sql | mysql -h mysql -u root -p$MYSQL_ROOT_PASSWORD"]
           ports:
             - containerPort: 3306
           env:
