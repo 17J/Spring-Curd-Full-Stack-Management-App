@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: 17rj/bugtracker-fullstack-frontend:latest
+          image: 17rj/bugtracker-fullstack-frontend:v3
           ports:
             - containerPort: 8085
 
